@@ -427,8 +427,8 @@ def run_bn_inference(config):
         learn_handler(learn_args)
 
         # Classify step
-        # classify_args = classify_format_args(config, class_)
-        # classify_handler(classify_args)
+        classify_args = classify_format_args(config, class_)
+        classify_handler(classify_args)
 
         # Visualize step
         visualize_args = visualize_format_args(config, class_)
