@@ -231,6 +231,7 @@ def learn_format_args(args:dict, class_:str)-> Namespace:
     formatted_args['pkn'] = f'{out_dir}/reduced_transformed_pkn.sif'
     formatted_args['midas'] = f'{out_dir}/{class_}_midas.csv'
     formatted_args['time'] = 10
+    formatted_args['threads'] = args['threads'] if args['threads'] else 1 
     formatted_args['fit'] = args['fit'] if args['fit'] else 0
     formatted_args['size'] = args['size'] if args['size'] else 0
     formatted_args['length'] = args['length'] if args['length'] else 0
@@ -251,8 +252,9 @@ def classify_format_args(args:dict, class_:str)-> Namespace:
     formatted_args['setup'] = f'{out_dir}/setup.json'
     formatted_args['networks'] = f'{out_dir}/{class_}/networks.csv'
     formatted_args['midas'] = [f'{out_dir}/{class_}_midas.csv', 10]
+    formatted_args['threads'] = args['threads'] if args['threads'] else 1 
     # Non-used params - Caspo default value   
-    formatted_args['threads'] = 1              
+    #formatted_args['threads'] = 1              
     formatted_args['conf'] = 'many'         
     return Namespace(**formatted_args)
 
