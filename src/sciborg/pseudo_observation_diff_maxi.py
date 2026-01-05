@@ -155,7 +155,7 @@ def create_midas_file(expr_data: pd.DataFrame, readout_genes: str, input_genes: 
 
     class_len = len(cells)
 
-    inputs_dict[f'TR:{class_name}:CellLine'] = [1 for x in range(class_len*2)]
+    inputs_dict[f'TR:{class_name}:CellLine'] = [cell for cell in cells]*2
 
     for ii_gene in input_genes:
         current_column = list()
@@ -260,12 +260,19 @@ def run_pseudo_observation_diff_maxi(config):
 
 
     # Create MIDAS files
+    all_midas = dict()
     for i  in range(len(classes)):
         class_ = classes[i]
         if not os.path.exists(f'{out_dir}/{class_}'): os.makedirs(f'{out_dir}/{class_}')
         curent_cells = [item[i] for item in perturbations] 
         create_midas_file(input_genes=input_genes, expr_data=expr_data, cells=curent_cells,
                         readout_genes=readout_genes, out_dir=out_dir, class_name=class_, intermediate_genes=intermediate_genes)
+        df_class = pd.read_csv(f'{out_dir}/{class_}_midas.csv')
+        df_class.rename({f'TR:{class_}:CellLine': 'TR:CellLine'}, axis=1, inplace=True)
+        all_midas[f'{class_}']= df_class
+
+    all_midas_df= pd.concat(all_midas.values())
+    all_midas_df.to_csv(f'{out_dir}/all_pp_midas.csv', index=False)
     
     transform_sif_file(out_dir)
     create_setup_file(sel_genes, readout_genes, input_genes, intermediate_genes, out_dir)
