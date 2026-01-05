@@ -81,6 +81,9 @@ def check_config_file(config_parser: configparser.ConfigParser) -> dict():
         if config['time_point'] < 0:
             raise ValueError('Configuration file -- [PSEUDO_PERTURBATIONS] : Incorrect time_point. See configuration file.')
 
+        config['threads'] = config_parser.getint('BN_INFERENCE', 'threads')
+        if config['threads'] <= 0:
+            raise ValueError('Configuration file -- [BN_INFERENCE] : Incorrect threads value. See configuration file.')
         config['fit'] = config_parser.getfloat('BN_INFERENCE', 'fit')
         if config['fit'] < 0:
             raise ValueError('Configuration file -- [BN_INFERENCE] : Incorrect fit value. See configuration file.')
