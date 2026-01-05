@@ -97,8 +97,14 @@ sciborg --pkn-construction --pseudo-perturbation-identification --pseudo-observa
 
 The execution should take 3/4 minutes and produce results similar to those in `demo/expected_results` folder.
 
-## Author
+## Authors
+### Original Branch
 * Mathieu Bolteau 
     * [@mathieubolteau](https://github.com/mathieubolteau)
     * [mathieu.bolteau.pro@gmail.com](mailto:mathieu.bolteau.pro@gmail.com)
+    * Nantes Université, École Centrale Nantes, CNRS, LS2N, UMR 6004, F-44000, Nantes
+### This branch
+* Célia Messaoudi
+    * [@celia-mssd](https://github.com/celia-mssd)
+    * [celia.messaoudi@ls2n.fr](mailto:celia.messaoudi@ls2n.fr)
     * Nantes Université, École Centrale Nantes, CNRS, LS2N, UMR 6004, F-44000, Nantes
