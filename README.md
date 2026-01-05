@@ -12,13 +12,13 @@ The framework searches to compute families of Boolean networks that are both com
 
 SCIBORG only works under Python 3.8. Two submodules, included in the SCIBORG package, are required:
 * [pyBRAvo](https://github.com/mathieubolteau/pyBRAvo) 
-* [caspo](https://github.com/mathieubolteau/caspo)
+* [caspo](https://github.com/celia-mssd/caspo)
 
 ### Installation
 
 1. Clone the repository including submodules.
     ```sh 
-    git clone --recursive git@github.com:mathieubolteau/SCIBORG.git
+    git clone --recursive git@github.com:celia-mssd/SCIBORG.git
     ```
 2. Install anaconda/miniconda if not already done to create conda env.
    Please follow instructions here: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
@@ -98,12 +98,12 @@ sciborg --pkn-construction --pseudo-perturbation-identification --pseudo-observa
 The execution should take 3/4 minutes and produce results similar to those in `demo/expected_results` folder.
 
 ## Authors
-### Original Branch
+### Original repository
 * Mathieu Bolteau 
     * [@mathieubolteau](https://github.com/mathieubolteau)
     * [mathieu.bolteau.pro@gmail.com](mailto:mathieu.bolteau.pro@gmail.com)
     * Nantes Université, École Centrale Nantes, CNRS, LS2N, UMR 6004, F-44000, Nantes
-### This branch
+### This repository
 * Célia Messaoudi
     * [@celia-mssd](https://github.com/celia-mssd)
     * [celia.messaoudi@ls2n.fr](mailto:celia.messaoudi@ls2n.fr)
