@@ -11,6 +11,7 @@ try:
     import pkg_resources
     import clyngor
     import numpy as np
+    from sklearn import mixture 
 
 
     from .utils import  read_file, load_data, get_classes, save_to_file
