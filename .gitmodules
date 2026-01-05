@@ -1,6 +1,3 @@
-[submodule "src/caspo"]
-	path = src/caspo
-	url = git@github.com:mathieubolteau/caspo.git
 [submodule "src/sciborg/pyBRAvo"]
 	path = src/sciborg/pyBRAvo
 	url = git@github.com:mathieubolteau/pyBRAvo.git
