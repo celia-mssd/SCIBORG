@@ -1,3 +1,6 @@
 [submodule "src/sciborg/pyBRAvo"]
 	path = src/sciborg/pyBRAvo
 	url = git@github.com:mathieubolteau/pyBRAvo.git
+[submodule "caspo"]
+	path = caspo
+	url = git@github.com:celia-mssd/caspo.git
