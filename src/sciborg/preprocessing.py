@@ -52,6 +52,17 @@ def reduce_and_binarize_matrix(mtx, cell_types_selected, readouts, inputs, inter
         else:
             return 1
 
+    def binarize_gmm(column):
+    	g = mixture.GaussianMixture(n_components=2)
+    	g.fit(column.values.reshape(-1, 1))
+
+    	if g.means_[0] < g.means_[1]:
+            binary_column = g.predict(column.values.reshape(-1, 1))
+    	else:
+            binary_column = np.abs(g.predict(column.values.reshape(-1, 1)) - 1)
+    
+    	return pd.Series(binary_column, index=column.index)
+
     def normalize(x):
         return (2 / np.pi) * np.arctan(x)
 
@@ -74,7 +85,8 @@ def reduce_and_binarize_matrix(mtx, cell_types_selected, readouts, inputs, inter
         if gene in readouts:
             bin_reduced_expr_mtx[gene] = bin_reduced_expr_mtx[gene].apply(normalize)
         elif gene in i_o_genes:
-            bin_reduced_expr_mtx[gene] = bin_reduced_expr_mtx[gene].apply(binarize)
+            #bin_reduced_expr_mtx[gene] = bin_reduced_expr_mtx[gene].apply(binarize)
+            bin_reduced_expr_mtx[gene] = binarize_gmm(bin_reduced_expr_mtx[gene]) 
 
     return bin_reduced_expr_mtx, i_o_genes, readouts
 
