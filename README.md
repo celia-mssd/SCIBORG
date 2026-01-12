@@ -9,16 +9,17 @@ The framework searches to compute families of Boolean networks that are both com
 3. The BN inference.
 
 SCIBORG was used to study human peri-implantation embryonic development. 
-First SCIBORG version: Bolteau, M., Messaoudi, C., al. *Deep exploration of logical models of cell differentiation in human preimplantation embryos.* npj Syst Biol Appl 11, 57 (2025). [doi](https://doi.org/10.1038/s41540-025-00537-7)
+
+* First SCIBORG version: Bolteau, M., Messaoudi, C., al. *Deep exploration of logical models of cell differentiation in human preimplantation embryos.* npj Syst Biol Appl 11, 57 (2025). [doi](https://doi.org/10.1038/s41540-025-00537-7)
 
 ## How is this version different ?
 
-This version of SCIBORG differs in three ways:
+This version of SCIBORG differs in two ways:
 1. Pathways Commons version 14 was used to reconstruct a new PKN (see picture below) from a list of transcription factors involved in human embryonic development.
 2. The binarization of the data is done using Gaussian Mixture Models (GMM) instead of the random threshold used before.
-3. A Jaccard index was used to assess similarities between BNs.
 
-New PKN: [pkn.pdf](https://github.com/user-attachments/files/24566083/pkn.pdf)
+The picture below shows a smaller PKN obtainined by only keeping the nodes found both in the data and the larger PKN. The bigger PKN is available [here](https://github.com/user-attachments/files/24566083/pkn.pdf).
+![smaller PKN](pkn-zip.pdf)
 
 ### Prerequisites
 
