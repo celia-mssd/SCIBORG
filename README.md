@@ -8,6 +8,18 @@ The framework searches to compute families of Boolean networks that are both com
 2. The experimental design construction.
 3. The BN inference.
 
+SCIBORG was used to study human peri-implantation embryonic development. 
+First SCIBORG version: Bolteau, M., Messaoudi, C., al. *Deep exploration of logical models of cell differentiation in human preimplantation embryos.* npj Syst Biol Appl 11, 57 (2025). [doi](https://doi.org/10.1038/s41540-025-00537-7)
+
+## How is this version different ?
+
+This version of SCIBORG differs in three ways:
+1. Pathways Commons version 14 was used to reconstruct a new PKN (see picture below) from a list of transcription factors involved in human embryonic development.
+2. The binarization of the data is done using Gaussian Mixture Models (GMM) instead of the random threshold used before.
+3. A Jaccard index was used to assess similarities between BNs.
+
+New PKN: [pkn.pdf](https://github.com/user-attachments/files/24566083/pkn.pdf)
+
 ### Prerequisites
 
 SCIBORG only works under Python 3.8. Two submodules, included in the SCIBORG package, are required:
