@@ -19,7 +19,7 @@ This version of SCIBORG differs in two ways:
 2. The binarization of the data is done using Gaussian Mixture Models (GMM) instead of the random threshold used before.
 
 The picture below shows a smaller PKN obtainined by only keeping the nodes found both in the data and the larger PKN. The bigger PKN is available [here](https://github.com/user-attachments/files/24566083/pkn.pdf).
-![smaller PKN](pkn-zip.pdf)
+![smaller PKN](pkn-small.jpg)
 
 ### Prerequisites
 
