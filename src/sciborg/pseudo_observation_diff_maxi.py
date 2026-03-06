@@ -169,7 +169,7 @@ def create_midas_file(expr_data: pd.DataFrame, readout_genes: str, input_genes: 
             expr_value = expr_data.at[cell, ii_gene]
             expr_value = 1 if expr_value==0 else 0
             current_column.append(expr_value)
-        inputs_dict[f'TR:{ii_gene}'] = current_column+current_column
+        inputs_dict[f'TR:{ii_gene}i'] = current_column+current_column
 
     for r_gene in readout_genes:
         DA_readouts_dict[f'DA:{r_gene}'] = [0 for x in range(class_len)]+[10 for x in range(class_len)]
