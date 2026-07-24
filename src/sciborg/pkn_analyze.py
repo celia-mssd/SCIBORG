@@ -104,7 +104,7 @@ def are_all_predecessors_in_list(node: str, predecessors_list: list, graph: nx.D
 
 
 
-def reduce_pkn(pkn_content: str, matrix_genes: list) -> tuple:
+def strict_reduce_pkn(pkn_content: str, matrix_genes: list) -> tuple:
     """
     Reduces the given PKN content based on a list of matrix genes.
     """
@@ -139,7 +139,7 @@ def reduce_pkn(pkn_content: str, matrix_genes: list) -> tuple:
     return reduced_pkn_content, edges_to_remove
 
 
-def old_reduce_pkn(pkn_content:str, matrix_genes:list) -> str:
+def permissive_reduce_pkn(pkn_content:str, matrix_genes:list) -> str:
     reduced_pkn_content = str()
     graph = nx.DiGraph(read_sif(pkn_content))
     nodes = graph.nodes
@@ -440,7 +440,7 @@ def run_pkn_analyze(sif_file:str, out_dir:str, gene_expr_mtx_file:str, input_gen
     modified_sif_content = remove_unknown_edges(modified_sif_content)
 
     # Reduce pkn
-    reduced_pkn, removed_edges  = reduce_pkn(modified_sif_content, list(reduced_expr_mtx.columns))
+    reduced_pkn, removed_edges  = strict_reduce_pkn(modified_sif_content, list(reduced_expr_mtx.columns))
     save_to_file(reduced_pkn, out_dir+'reduced_pkn.sif')
     # perfect_matchs_reduced_pkn, perfect_matchs_deleted_inputs = reduce_pkn(sif_content, list(perfect_matchs_reduced_mtx.columns))
     # save_to_file(perfect_matchs_reduced_pkn, out_dir+'perfect_matchs/reduced_pkn.sif')
