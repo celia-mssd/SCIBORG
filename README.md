@@ -18,8 +18,8 @@ This version of SCIBORG differs in two ways:
 1. The PKN wa reconstructed using Pathway Commons version 14, a list of transcription factors involved in human embryonic development a strict reduction function.
 2. The binarization of the data is done using Gaussian Mixture Models (GMM) instead of the random threshold used before.
 
-The picture below shows a smaller PKN obtained by only keeping the nodes found both in the data and the larger PKN. The bigger PKN is available [here](https://github.com/user-attachments/files/24566083/pkn.pdf).
-![smaller PKN](pkn-small.jpg)
+The picture below shows a PKN obtained by using a strict reduction function.
+![reduced PKN](reduced_pkn_v14.jpg)
 
 ### Prerequisites
 
