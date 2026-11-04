@@ -15,7 +15,7 @@ SCIBORG was used to study human peri-implantation embryonic development.
 ## How is this version different ?
 
 This version of SCIBORG differs in two ways:
-1. The PKN wa reconstructed using Pathway Commons version 14, a list of transcription factors involved in human embryonic development a strict reduction function.
+1. The PKN was reconstructed using Pathway Commons version 14, a list of transcription factors involved in human embryonic development a strict reduction function.
 2. The binarization of the data is done using Gaussian Mixture Models (GMM) instead of the random threshold used before.
 
 The picture below shows a PKN obtained by using a strict reduction function.
@@ -110,14 +110,35 @@ sciborg --pkn-construction --pseudo-perturbation-identification --pseudo-observa
 
 The execution should take 3/4 minutes and produce results similar to those in `demo/expected_results` folder.
 
+## How to use chose the reduction and binarization functions ?
+
+### Choose the reduction function
+Both strict and permissive reductions are available in SCIBORG.
+To choose one :
+    * Go to SCIBORG/src/sciborg/pkn_analyze.py
+    * In the run_pkn_analyze() function
+        *  **uncomment** the line calling the reduction function **you want** to use
+        *   **comment** the line calling the reduction function **you don't want** to use.
+The default reduction function used is the permissive one.
+
+### Choose the binarization function
+Both standard (threshold_based) and  GMM-based binarizations are available in SCIBORG.
+To choose one :
+    * Go to SCIBORG/src/sciborg/preprocessing.py
+    * In the reduce_and_binarize_matrix() function
+        *  **uncomment** the line calling the binarization function **you want** to use
+        *  **comment** the line calling the binarization function **you don't want** to use.
+The default binarization function used is the GMM-based one.
+
 ## Authors
-### Original repository
-* Mathieu Bolteau 
-    * [@mathieubolteau](https://github.com/mathieubolteau)
-    * [mathieu.bolteau.pro@gmail.com](mailto:mathieu.bolteau.pro@gmail.com)
-    * Nantes Université, École Centrale Nantes, CNRS, LS2N, UMR 6004, F-44000, Nantes
 ### This repository
 * Célia Messaoudi
     * [@celia-mssd](https://github.com/celia-mssd)
     * [celia.messaoudi@ls2n.fr](mailto:celia.messaoudi@ls2n.fr)
+    * Nantes Université, École Centrale Nantes, CNRS, LS2N, UMR 6004, F-44000, Nantes
+ 
+### Original SCIBORG version
+* Mathieu Bolteau 
+    * [@mathieubolteau](https://github.com/mathieubolteau)
+    * [mathieu.bolteau.pro@gmail.com](mailto:mathieu.bolteau.pro@gmail.com)
     * Nantes Université, École Centrale Nantes, CNRS, LS2N, UMR 6004, F-44000, Nantes
