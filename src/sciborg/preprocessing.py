@@ -86,7 +86,9 @@ def reduce_and_binarize_matrix(mtx, cell_types_selected, readouts, inputs, inter
         if gene in readouts:
             bin_reduced_expr_mtx[gene] = bin_reduced_expr_mtx[gene].apply(normalize)
         elif gene in i_o_genes:
+            # uncomment next line to use standard/threshold-based binarization
             #bin_reduced_expr_mtx[gene] = bin_reduced_expr_mtx[gene].apply(binarize)
+            # uncomment next line to use GMM-based binarization
             bin_reduced_expr_mtx[gene] = binarize_gmm(bin_reduced_expr_mtx[gene]) 
 
     return bin_reduced_expr_mtx, i_o_genes, readouts
