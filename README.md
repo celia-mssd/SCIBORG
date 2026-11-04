@@ -114,20 +114,24 @@ The execution should take 3/4 minutes and produce results similar to those in `d
 
 ### Choose the reduction function
 Both strict and permissive reductions are available in SCIBORG.
-To choose one :
-    * Go to SCIBORG/src/sciborg/pkn_analyze.py
-    * In the run_pkn_analyze() function
-        *  **uncomment** the line calling the reduction function **you want** to use
-        *   **comment** the line calling the reduction function **you don't want** to use.
+
+To choose one:
+* Go to SCIBORG/src/sciborg/pkn_analyze.py
+* In the run_pkn_analyze() function:
+    *  __uncomment__ the line calling the reduction function __you want__ to use
+    *  __comment__ the line calling the reduction function __you don't want__ to use.
+        
 The default reduction function used is the permissive one.
 
 ### Choose the binarization function
 Both standard (threshold_based) and  GMM-based binarizations are available in SCIBORG.
-To choose one :
-    * Go to SCIBORG/src/sciborg/preprocessing.py
-    * In the reduce_and_binarize_matrix() function
-        *  **uncomment** the line calling the binarization function **you want** to use
-        *  **comment** the line calling the binarization function **you don't want** to use.
+
+To choose one:
+* Go to SCIBORG/src/sciborg/preprocessing.py
+* In the reduce_and_binarize_matrix() function:
+    *  __uncomment__ the line calling the binarization function __you want__ to use
+    *  __comment__ the line calling the binarization function __you don't want__ to use.
+        
 The default binarization function used is the GMM-based one.
 
 ## Authors
